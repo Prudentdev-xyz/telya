@@ -49,11 +49,10 @@ export function SiteHeader() {
               Telya<span className="wordmark-dot" aria-hidden="true">.</span>
             </a>
 
-            {/* Desktop Primary Navigation */}
+            {/* Desktop Primary Navigation (Clean Text, No Clutter) */}
             <nav className="desktop-nav" aria-label="Primary navigation">
               <ul className="nav-list">
                 {NAV_ITEMS.map((item) => {
-                  const Icon = item.icon;
                   const isActive = activeItem === item.label;
                   return (
                     <li key={item.label}>
@@ -63,8 +62,7 @@ export function SiteHeader() {
                         aria-current={isActive ? "page" : undefined}
                         onClick={() => setActiveItem(item.label)}
                       >
-                        <Icon className="nav-icon" />
-                        <span>{item.label}</span>
+                        {item.label}
                       </a>
                     </li>
                   );
@@ -98,8 +96,7 @@ export function SiteHeader() {
               href="/api/health"
               aria-label="View system health"
             >
-              <Terminal className="nav-icon" aria-hidden="true" />
-              <span>Health</span>
+              System health
             </a>
 
             {/* Mobile Hamburger Toggle */}
